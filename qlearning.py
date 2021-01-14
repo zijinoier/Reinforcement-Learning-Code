@@ -3,13 +3,17 @@ import time
 import sys
 import gym
 import random
+# import sys
+# sys.path.append('./env/')
+
+import gym_foo
 random.seed(0)
 
 grid = gym.make('GridWorld-v0')
 # grid=env.env                     #创建网格世界
-states = grid.env.getStates()  # 获得网格世界的状态空间
-actions = grid.env.getAction()  # 获得网格世界的动作空间
-gamma = grid.env.getGamma()  # 获得折扣因子
+states = grid.getStates()  # 获得网格世界的状态空间
+actions = grid.getAction()  # 获得网格世界的动作空间
+gamma = grid.getGamma()  # 获得折扣因子
 # 计算当前策略和最优策略之间的差
 best = dict()  # 储存最优行为值函数
 
